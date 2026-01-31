@@ -1,0 +1,157 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Button from '../../components/parts/Button.astro';
+import SectionHeading from '../../components/parts/SectionHeading.astro';
+import Card from '../../components/parts/Card.astro';
+import StepItem from '../../components/parts/StepItem.astro';
+import AccordionItem from '../../components/parts/AccordionItem.astro';
+import Badge from '../../components/parts/Badge.astro';
+import StarRating from '../../components/parts/StarRating.astro';
+import TimelineItem from '../../components/parts/TimelineItem.astro';
+import PriceTable from '../../components/parts/PriceTable.astro';
+---
+
+<Layout title="Components Preview">
+  <main class="mx-auto max-w-4xl px-4 py-12">
+    <h1 class="mb-12 text-3xl font-bold">Components Preview</h1>
+
+    <!-- Button -->
+    <section class="mb-16">
+      <h2 class="mb-6 border-b pb-2 text-2xl font-bold">Button</h2>
+      <div class="flex flex-wrap items-center gap-4">
+        <Button href="#">Primary (default)</Button>
+        <Button href="#" variant="secondary">Secondary</Button>
+        <Button href="#" size="sm">Small</Button>
+        <Button href="#" size="md">Medium</Button>
+        <Button href="#" size="lg">Large</Button>
+      </div>
+    </section>
+
+    <!-- SectionHeading -->
+    <section class="mb-16">
+      <h2 class="mb-6 border-b pb-2 text-2xl font-bold">SectionHeading</h2>
+      <SectionHeading>見出しテキスト</SectionHeading>
+      <SectionHeading subtitle="サブタイトルのテキストが入ります">
+        見出し + サブタイトル
+      </SectionHeading>
+    </section>
+
+    <!-- Card -->
+    <section class="mb-16">
+      <h2 class="mb-6 border-b pb-2 text-2xl font-bold">Card</h2>
+      <div class="grid gap-6 md:grid-cols-2">
+        <Card title="カードタイトル">
+          <p>カードの説明文が入ります。</p>
+        </Card>
+        <Card
+          title="画像付きカード"
+          image="https://placehold.co/600x400/0ea5e9/white?text=Sample"
+        >
+          <p>画像付きのカードです。</p>
+        </Card>
+      </div>
+    </section>
+
+    <!-- Badge -->
+    <section class="mb-16">
+      <h2 class="mb-6 border-b pb-2 text-2xl font-bold">Badge</h2>
+      <div class="flex flex-wrap gap-8">
+        <Badge icon="🛡️">政府公認</Badge>
+        <Badge icon="🇯🇵">日本企業運営</Badge>
+        <Badge icon="🗣️">日本語ガイド</Badge>
+        <Badge icon="⭐">口コミ高評価</Badge>
+      </div>
+    </section>
+
+    <!-- StarRating -->
+    <section class="mb-16">
+      <h2 class="mb-6 border-b pb-2 text-2xl font-bold">StarRating</h2>
+      <div class="flex flex-col gap-2">
+        <div class="flex items-center gap-2">
+          <StarRating rating={5} />
+          <span class="text-sm text-gray-500">5.0</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <StarRating rating={4.5} />
+          <span class="text-sm text-gray-500">4.5</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <StarRating rating={3} />
+          <span class="text-sm text-gray-500">3.0</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- StepItem -->
+    <section class="mb-16">
+      <h2 class="mb-6 border-b pb-2 text-2xl font-bold">StepItem</h2>
+      <div class="flex flex-col gap-6">
+        <StepItem step={1} title="日程を予約">
+          <p>YouCanBookMe で希望の日程を選択してください。</p>
+        </StepItem>
+        <StepItem step={2} title="確認メール受信">
+          <p>予約後、詳細の確認メールが届きます。</p>
+        </StepItem>
+        <StepItem step={3} title="ツアー当日">
+          <p>集合場所にお越しください。</p>
+        </StepItem>
+      </div>
+    </section>
+
+    <!-- TimelineItem -->
+    <section class="mb-16">
+      <h2 class="mb-6 border-b pb-2 text-2xl font-bold">TimelineItem</h2>
+      <div>
+        <TimelineItem time="08:00" title="ホテルお迎え">
+          <p>ご宿泊先までお迎えに上がります。</p>
+        </TimelineItem>
+        <TimelineItem time="10:00" title="シュノーケリング">
+          <p>透明度抜群の海でシュノーケリングを楽しみます。</p>
+        </TimelineItem>
+        <TimelineItem time="12:00" title="ランチ">
+          <p>現地のレストランでフィリピン料理を堪能。</p>
+        </TimelineItem>
+      </div>
+    </section>
+
+    <!-- AccordionItem -->
+    <section class="mb-16">
+      <h2 class="mb-6 border-b pb-2 text-2xl font-bold">AccordionItem</h2>
+      <div>
+        <AccordionItem question="キャンセルポリシーは？">
+          <p>3日前までのキャンセルは全額返金いたします。</p>
+        </AccordionItem>
+        <AccordionItem question="英語が話せなくても大丈夫？">
+          <p>日本語対応のガイドが同行しますのでご安心ください。</p>
+        </AccordionItem>
+        <AccordionItem question="子連れでも参加できる？">
+          <p>お子様連れでもご参加いただけます。</p>
+        </AccordionItem>
+      </div>
+    </section>
+
+    <!-- PriceTable -->
+    <section class="mb-16">
+      <h2 class="mb-6 border-b pb-2 text-2xl font-bold">PriceTable</h2>
+      <div class="grid gap-6 md:grid-cols-2">
+        <PriceTable
+          title="アイランドホッピング"
+          rows={[
+            { label: '1名', price: '¥15,000' },
+            { label: '2名', price: '¥12,000 / 人' },
+            { label: '3名以上', price: '¥10,000 / 人' },
+          ]}
+          note="※ 料金にはランチ、ドリンク、シュノーケリング器具が含まれます"
+        />
+        <PriceTable
+          title="ジンベイザメツアー"
+          rows={[
+            { label: '1名', price: '¥20,000' },
+            { label: '2名', price: '¥17,000 / 人' },
+            { label: '3名以上', price: '¥14,000 / 人' },
+          ]}
+        />
+      </div>
+    </section>
+  </main>
+</Layout>
