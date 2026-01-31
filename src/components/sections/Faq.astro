@@ -1,0 +1,44 @@
+---
+import SectionHeading from '../parts/SectionHeading.astro';
+import AccordionItem from '../parts/AccordionItem.astro';
+---
+
+<section id="faq" class="bg-gray-50 py-20">
+  <div class="mx-auto max-w-3xl px-4">
+    <SectionHeading subtitle="お客様からよくいただくご質問">
+      よくある質問
+    </SectionHeading>
+
+    <div>
+      <AccordionItem question="英語が話せなくても大丈夫ですか？">
+        <p>
+          はい、日本語対応のガイドが同行しますので、英語が話せなくてもまったく問題ありません。予約から当日まですべて日本語で対応いたします。
+        </p>
+      </AccordionItem>
+
+      <AccordionItem question="1人でも参加できますか？">
+        <p>
+          はい、おひとり様でもご参加いただけます。少人数制のため、お一人でもしっかり楽しんでいただけるツアー内容です。
+        </p>
+      </AccordionItem>
+
+      <AccordionItem question="キャンセルポリシーを教えてください">
+        <p>
+          3日前までのキャンセルは全額返金いたします。2日前〜前日は50%、当日キャンセルは返金不可となります。天候不良による中止の場合は全額返金いたします。
+        </p>
+      </AccordionItem>
+
+      <AccordionItem question="天候が悪い場合はどうなりますか？">
+        <p>
+          安全を最優先に判断し、催行が困難な場合は前日までにご連絡いたします。中止の場合は全額返金、または日程変更で対応いたします。ドローン撮影ができない場合は地上からの撮影で対応いたします。
+        </p>
+      </AccordionItem>
+
+      <AccordionItem question="保険は含まれていますか？">
+        <p>
+          基本的な旅行保険が含まれています。より充実した補償をご希望の場合は、海外旅行保険への別途加入をおすすめいたします。
+        </p>
+      </AccordionItem>
+    </div>
+  </div>
+</section>
