@@ -1,0 +1,42 @@
+---
+import SectionHeading from '../parts/SectionHeading.astro';
+import TimelineItem from '../parts/TimelineItem.astro';
+---
+
+<section id="schedule" class="bg-white py-20">
+  <div class="mx-auto max-w-3xl px-4">
+    <SectionHeading subtitle="1日の流れをご紹介します">
+      ツアースケジュール
+    </SectionHeading>
+
+    <div>
+      <TimelineItem time="05:00" title="ホテルお迎え">
+        <p>ご宿泊先のホテルまでお迎えに上がります。</p>
+      </TimelineItem>
+
+      <TimelineItem time="08:00" title="オスロブ到着・ジンベイザメツアー">
+        <p>
+          ジンベイザメと一緒に泳ぐ感動体験。間近で見るジンベイザメは圧巻です。
+        </p>
+      </TimelineItem>
+
+      <TimelineItem time="10:00" title="カワサン滝 / キャニオニング">
+        <p>
+          エメラルドグリーンの滝壺で水遊び。アクティブ派にはキャニオニングもおすすめ。
+        </p>
+      </TimelineItem>
+
+      <TimelineItem time="12:30" title="ランチ">
+        <p>現地のレストランでフィリピン料理をお楽しみください。</p>
+      </TimelineItem>
+
+      <TimelineItem time="14:00" title="アイランドホッピング / ドローン撮影">
+        <p>美しい島々を巡りながら、ドローンによる空撮を行います。</p>
+      </TimelineItem>
+
+      <TimelineItem time="17:00" title="ホテル到着・解散">
+        <p>ホテルまでお送りします。空撮データは後日お届けします。</p>
+      </TimelineItem>
+    </div>
+  </div>
+</section>
