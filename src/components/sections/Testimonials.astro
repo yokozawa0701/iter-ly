@@ -1,0 +1,56 @@
+---
+import SectionHeading from '../parts/SectionHeading.astro';
+import StarRating from '../parts/StarRating.astro';
+
+const testimonials = [
+  {
+    name: 'T.K. さん',
+    date: '2025年1月',
+    rating: 5,
+    tag: '安全面',
+    text: '初めてのセブ島で不安でしたが、日本の会社が運営していると聞いて申し込みました。ガイドさんが日本語で丁寧に説明してくれて、終始安心して過ごせました。',
+  },
+  {
+    name: 'M.S. さん',
+    date: '2024年12月',
+    rating: 5,
+    tag: '日本語サポート',
+    text: '予約から当日まですべて日本語でやり取りできたのが本当にありがたかったです。ガイドさんの日本語も上手で、細かいリクエストにも応えてくれました。',
+  },
+  {
+    name: 'Y.A. さん',
+    date: '2024年11月',
+    rating: 5,
+    tag: '全体体験',
+    text: '少人数だったので自分たちのペースで楽しめました。ドローン空撮の映像は想像以上のクオリティで、一生の思い出になりました。',
+  },
+];
+---
+
+<section class="bg-gray-50 py-20">
+  <div class="mx-auto max-w-6xl px-4">
+    <SectionHeading subtitle="実際にご利用いただいたお客様の声">
+      お客様の体験談
+    </SectionHeading>
+
+    <div class="grid gap-8 md:grid-cols-3">
+      {
+        testimonials.map((t) => (
+          <div class="rounded-2xl bg-white p-6 shadow-md">
+            <div class="mb-3 flex items-center justify-between">
+              <StarRating rating={t.rating} />
+              <span class="rounded-full bg-cyan-50 px-3 py-1 text-xs font-semibold text-cyan-700">
+                {t.tag}
+              </span>
+            </div>
+            <p class="mb-4 text-gray-600">{t.text}</p>
+            <div class="text-sm text-gray-400">
+              <span class="font-semibold text-gray-700">{t.name}</span>
+              <span class="ml-2">{t.date}</span>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
