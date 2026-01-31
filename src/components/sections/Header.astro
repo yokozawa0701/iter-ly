@@ -1,0 +1,27 @@
+---
+const navItems = [
+  { label: 'ツアー内容', href: '#tour-details' },
+  { label: '選ばれる理由', href: '#reasons' },
+  { label: 'スケジュール', href: '#schedule' },
+  { label: '料金', href: '#pricing' },
+  { label: 'FAQ', href: '#faq' },
+];
+---
+
+<header class="fixed top-0 z-50 w-full bg-white/90 shadow-sm backdrop-blur-sm">
+  <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+    <a href="/" class="text-xl font-bold text-cyan-600">iter-ly</a>
+    <nav class="hidden gap-6 md:flex">
+      {
+        navItems.map((item) => (
+          <a
+            href={item.href}
+            class="text-sm font-medium text-gray-700 transition-colors hover:text-cyan-600"
+          >
+            {item.label}
+          </a>
+        ))
+      }
+    </nav>
+  </div>
+</header>
