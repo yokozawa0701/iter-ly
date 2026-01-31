@@ -7,16 +7,29 @@ import Button from '../parts/Button.astro';
   style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://placehold.co/1920x1080/0891b2/white?text=Cebu+Island');"
 >
   <div class="px-4 text-center text-white">
-    <p class="mb-4 text-lg font-medium tracking-wider md:text-xl">
-      セブ島の感動を、もっと身近に
-    </p>
-    <h1 class="mb-6 text-4xl font-bold leading-tight md:text-6xl">
-      忘れられない<br />セブ島体験を
+    <h1 class="mb-4 text-4xl font-bold leading-tight md:text-6xl">
+      セブ島を、自由に、安心して
     </h1>
     <p class="mx-auto mb-8 max-w-2xl text-lg text-gray-200 md:text-xl">
-      日本語ガイド付き・ドローン空撮プレゼント<br />
-      旅行会社を通さないから、この価格で実現できました
+      日本語ガイド付き・少人数制ローカルツアー。<br />
+      ドローン空撮付き
     </p>
-    <Button href="#pricing" size="lg">ツアーを予約する</Button>
+    <ul
+      class="mx-auto mb-10 flex max-w-xl flex-col gap-3 text-left text-gray-100 md:flex-row md:justify-center md:gap-8 md:text-center"
+    >
+      <li class="flex items-center gap-2 md:flex-col">
+        <span class="text-xl">🗣️</span>
+        <span class="text-sm">日本語を話す現地ガイド</span>
+      </li>
+      <li class="flex items-center gap-2 md:flex-col">
+        <span class="text-xl">🇯🇵</span>
+        <span class="text-sm">日本の会社が運営</span>
+      </li>
+      <li class="flex items-center gap-2 md:flex-col">
+        <span class="text-xl">🛡️</span>
+        <span class="text-sm">許可証を持つツアー業者のみ</span>
+      </li>
+    </ul>
+    <Button href="#footer-cta" size="lg">空き状況を確認する</Button>
   </div>
 </section>
