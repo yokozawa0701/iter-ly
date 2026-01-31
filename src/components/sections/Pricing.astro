@@ -1,0 +1,51 @@
+---
+import SectionHeading from '../parts/SectionHeading.astro';
+import PriceTable from '../parts/PriceTable.astro';
+import Button from '../parts/Button.astro';
+---
+
+<section id="pricing" class="bg-gray-50 py-20">
+  <div class="mx-auto max-w-4xl px-4">
+    <SectionHeading subtitle="旅行会社を通さないから実現できた価格">
+      料金プラン
+    </SectionHeading>
+
+    <div class="grid gap-8 md:grid-cols-2">
+      <PriceTable
+        title="アイランドホッピング"
+        rows={[
+          { label: '1名', price: '¥15,000' },
+          { label: '2名', price: '¥12,000 / 人' },
+          { label: '3名以上', price: '¥10,000 / 人' },
+        ]}
+        note="※ 料金にはランチ、ドリンク、シュノーケリング器具、ドローン空撮が含まれます"
+      />
+      <PriceTable
+        title="ジンベイザメツアー"
+        rows={[
+          { label: '1名', price: '¥20,000' },
+          { label: '2名', price: '¥17,000 / 人' },
+          { label: '3名以上', price: '¥14,000 / 人' },
+        ]}
+        note="※ 料金にはランチ、送迎、ドローン空撮が含まれます"
+      />
+    </div>
+
+    <div class="mt-8 rounded-xl bg-white p-6">
+      <h3 class="mb-4 font-bold text-gray-900">料金に含まれるもの</h3>
+      <div class="grid gap-2 text-sm text-gray-600 md:grid-cols-2">
+        <p>✓ ボート</p>
+        <p>✓ 日本語ガイド</p>
+        <p>✓ ホテル送迎</p>
+        <p>✓ ランチ・ドリンク</p>
+        <p>✓ シュノーケリング器具</p>
+        <p>✓ ドローン空撮</p>
+        <p>✓ 写真・動画データ</p>
+      </div>
+    </div>
+
+    <div class="mt-10 text-center">
+      <Button href="#footer-cta" size="lg">空き状況を確認する</Button>
+    </div>
+  </div>
+</section>
