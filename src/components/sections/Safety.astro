@@ -1,0 +1,56 @@
+---
+import SectionHeading from '../parts/SectionHeading.astro';
+
+const reasons = [
+  {
+    icon: '🛡️',
+    title: '許可証を持つツアー業者',
+    text: 'フィリピン政府公認のツアー許可証を保有する業者のみと提携しています。',
+  },
+  {
+    icon: '🔍',
+    title: '弊社による業者スクリーニング',
+    text: '安全性・サービス品質を弊社が厳しく審査し、基準を満たした業者のみを採用しています。',
+  },
+  {
+    icon: '🗣️',
+    title: '日本語対応ガイド',
+    text: '日本語を話す現地ガイドが同行。言葉の不安なくツアーを楽しめます。',
+  },
+  {
+    icon: '👥',
+    title: '少人数制ツアー',
+    text: '少人数制だからこそ、一人ひとりに合わせた柔軟な対応が可能です。',
+  },
+  {
+    icon: '🇯🇵',
+    title: '日本の会社が運営',
+    text: '日本の会社が企画・運営しているため、日本品質のサービスを提供します。',
+  },
+  {
+    icon: '💳',
+    title: 'クレジットカード決済で安心',
+    text: 'オンラインでの安全なカード決済。現地での現金トラブルの心配がありません。',
+  },
+];
+---
+
+<section id="safety" class="bg-white py-20">
+  <div class="mx-auto max-w-6xl px-4">
+    <SectionHeading subtitle="安全で快適なツアーをお届けするための取り組み">
+      安心して参加できる理由
+    </SectionHeading>
+
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {
+        reasons.map((r) => (
+          <div class="rounded-2xl border border-gray-100 bg-gray-50 p-6">
+            <div class="mb-3 text-3xl">{r.icon}</div>
+            <h3 class="mb-2 text-lg font-bold text-gray-900">{r.title}</h3>
+            <p class="text-sm text-gray-600">{r.text}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
