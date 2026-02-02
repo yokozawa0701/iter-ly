@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/sections/Header.astro';
 import Hero from '../components/sections/Hero.astro';
+import AboutService from '../components/sections/AboutService.astro';
 import TourOverview from '../components/sections/TourOverview.astro';
 import Schedule from '../components/sections/Schedule.astro';
 import Pricing from '../components/sections/Pricing.astro';
@@ -12,12 +12,11 @@ import WhyAffordable from '../components/sections/WhyAffordable.astro';
 import BookingFlow from '../components/sections/BookingFlow.astro';
 import Faq from '../components/sections/Faq.astro';
 import FooterCta from '../components/sections/FooterCta.astro';
-import Footer from '../components/sections/Footer.astro';
 ---
 
 <Layout title="iter-ly | セブ島ツアー">
-  <Header />
   <Hero />
+  <AboutService />
   <TourOverview />
   <Schedule />
   <Pricing />
@@ -28,5 +27,7 @@ import Footer from '../components/sections/Footer.astro';
   <BookingFlow />
   <Faq />
   <FooterCta />
-  <Footer />
+  <footer class="bg-gray-900 py-6 text-center text-sm text-gray-400">
+    <p>&copy; 2026 Maaji inc.</p>
+  </footer>
 </Layout>
