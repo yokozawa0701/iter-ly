@@ -8,10 +8,11 @@ interface Props {
   title: string;
   rows: PriceRow[];
   note?: string;
+  notes?: string[];
   class?: string;
 }
 
-const { title, rows, note, class: className = '' } = Astro.props;
+const { title, rows, note, notes, class: className = '' } = Astro.props;
 ---
 
 <div
@@ -39,5 +40,14 @@ const { title, rows, note, class: className = '' } = Astro.props;
       </tbody>
     </table>
     {note && <p class="mt-4 text-sm text-gray-500">{note}</p>}
+    {
+      notes && (
+        <div class="mt-4 space-y-1 text-sm text-gray-500">
+          {notes.map((n) => (
+            <p style="padding-left: 1em; text-indent: -1em;">{n}</p>
+          ))}
+        </div>
+      )
+    }
   </div>
 </div>
