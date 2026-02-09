@@ -3,28 +3,35 @@ import SectionHeading from '../parts/SectionHeading.astro';
 
 const rows = [
   {
-    label: '金額 / 人（6名の場合）',
+    label: '表示上の金額 / 人',
     iterLy: '¥12,000',
-    companyA: '¥18,000',
-    companyB: '¥22,000',
+    companyA: '¥13,200',
+    companyB: '¥8,100',
+    bold: true,
   },
   {
     label: '各スポットエントランス費用',
     iterLy: '◎ 込み',
-    companyA: '× 別途',
+    companyA: '◎ 込み',
+    companyB: '× 別途',
+  },
+  {
+    label: 'シュノーケリング器具',
+    iterLy: '◎ 込み',
+    companyA: '◎ 込み',
     companyB: '× 別途',
   },
   {
     label: 'ホテル送迎',
     iterLy: '◎ 込み',
-    companyA: '△ 有料',
+    companyA: '× 別途',
     companyB: '◎ 込み',
   },
   {
     label: 'システム管理費',
     iterLy: '◎ 込み',
     companyA: '× 別途',
-    companyB: '× 別途',
+    companyB: '◎ 込み',
   },
   {
     label: 'ドローン空撮',
@@ -36,15 +43,24 @@ const rows = [
     label: '日本語ガイド',
     iterLy: '◎ 込み',
     companyA: '◎ 込み',
-    companyB: '△ 英語のみ',
+    companyB: '◎ 込み',
+  },
+  {
+    label: '実際の金額 / 人',
+    iterLy: '¥12,000',
+    companyA: '¥15,455',
+    companyB: '¥16,500',
+    bold: true,
   },
 ];
 ---
 
 <section class="bg-white py-20">
   <div class="mx-auto max-w-4xl px-4">
-    <SectionHeading subtitle="他社ツアーとの比較">
-      iter-ly が選ばれる理由
+    <SectionHeading
+      subtitle="「詳細を聞いたら金額が違った」――iter-ly ならそんな心配はありません"
+    >
+      他社ツアーとの料金比較
     </SectionHeading>
 
     <div class="overflow-x-auto">
@@ -69,7 +85,12 @@ const rows = [
           {
             rows.map((row, i) => (
               <tr class={i % 2 === 1 ? 'bg-gray-50' : ''}>
-                <td class="border-b border-gray-200 p-3 font-medium text-gray-700">
+                <td
+                  class:list={[
+                    'border-b border-gray-200 p-3 text-gray-700',
+                    row.bold ? 'font-bold' : 'font-medium',
+                  ]}
+                >
                   {row.label}
                 </td>
                 <td class="border-2 border-cyan-200 bg-cyan-50 p-3 text-center font-bold text-cyan-800">
@@ -86,6 +107,7 @@ const rows = [
           }
         </tbody>
       </table>
+      <p class="mt-4 text-right text-sm text-gray-500">※ 6名の場合の金額です</p>
     </div>
   </div>
 </section>
