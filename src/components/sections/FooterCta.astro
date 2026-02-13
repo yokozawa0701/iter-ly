@@ -1,7 +1,3 @@
----
-import { Icon } from 'astro-icon/components';
----
-
 <section id="footer-cta" class="bg-cyan-600 py-20">
   <div class="mx-auto max-w-3xl px-4 text-center text-white">
     <h2 class="mb-4 text-3xl font-bold md:text-4xl">
@@ -11,19 +7,17 @@ import { Icon } from 'astro-icon/components';
       ご希望の日程を選択して、セブ島の特別な体験を予約しましょう
     </p>
 
-    <!-- YouCanBookMe 埋め込みスペース -->
+    <!-- YouCanBookMe 埋め込み -->
     <div
       class="mx-auto max-w-2xl overflow-hidden rounded-2xl bg-white p-4 shadow-lg"
     >
-      <div
-        class="flex min-h-[400px] items-center justify-center rounded-xl bg-gray-50 text-gray-400"
-      >
-        <div class="text-center">
-          <Icon name="lucide:calendar" class="mx-auto mb-2 h-10 w-10" />
-          <p class="text-lg font-semibold">予約カレンダー</p>
-          <p class="mt-1 text-sm">YouCanBookMe 埋め込みスペース</p>
-        </div>
-      </div>
+      <script
+        is:inline
+        src="https://embed.ycb.me"
+        async="true"
+        data-domain="daisuke-yokozawa-0701"
+        data-displaymode="auto"
+        data-content="all"></script>
     </div>
   </div>
 </section>
