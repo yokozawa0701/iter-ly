@@ -24,6 +24,20 @@ const resolvedOgImage = ogImage || siteUrl + '/og-image.png';
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="/favicon.ico" />
+    <link
+      rel="preload"
+      href="/images/hero-sp.webp"
+      as="image"
+      type="image/webp"
+      media="(max-width: 767px)"
+    />
+    <link
+      rel="preload"
+      href="/images/hero-pc.webp"
+      as="image"
+      type="image/webp"
+      media="(min-width: 768px)"
+    />
     <title>{title}</title>
     {description && <meta name="description" content={description} />}
     {keywords && <meta name="keywords" content={keywords} />}

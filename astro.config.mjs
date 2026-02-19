@@ -9,6 +9,10 @@ import icon from 'astro-icon';
 export default defineConfig({
   site: 'https://www.iter-ly.com',
 
+  prefetch: {
+    prefetchAll: true,
+  },
+
   vite: {
     plugins: [tailwindcss()],
   },
