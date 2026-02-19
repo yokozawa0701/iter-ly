@@ -13,6 +13,10 @@ export default defineConfig({
     prefetchAll: true,
   },
 
+  build: {
+    inlineStylesheets: 'always',
+  },
+
   vite: {
     plugins: [tailwindcss()],
   },
