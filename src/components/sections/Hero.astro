@@ -2,8 +2,14 @@
 
 ---
 
-<!-- スマホ用: デザイン画像をそのまま全幅表示 -->
-<div class="md:hidden">
+<picture>
+  <source
+    media="(min-width: 768px)"
+    srcset="/images/hero-pc.webp"
+    type="image/webp"
+    width="2283"
+    height="925"
+  />
   <img
     src="/images/hero-sp.webp"
     alt="ジンベイザメに会いに行く、あなただけの1日。"
@@ -12,16 +18,4 @@
     height="930"
     fetchpriority="high"
   />
-</div>
-
-<!-- PC用: デザイン画像をそのまま全幅表示 -->
-<div class="hidden md:block">
-  <img
-    src="/images/hero-pc.webp"
-    alt="ジンベイザメに会いに行く、あなただけの1日。"
-    class="w-full"
-    width="2283"
-    height="925"
-    fetchpriority="high"
-  />
-</div>
+</picture>

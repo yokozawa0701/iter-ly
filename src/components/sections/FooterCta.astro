@@ -7,16 +7,36 @@
       ご希望の日程を選択して、セブ島の特別な体験を予約しましょう
     </p>
 
-    <!-- YouCanBookMe 埋め込み -->
+    <!-- YouCanBookMe 埋め込み（遅延読み込み） -->
     <div
+      id="ycbm-container"
       class="mx-auto max-w-2xl overflow-hidden rounded-2xl bg-white p-4 shadow-lg"
+      data-domain="iter-ly-oslob-tour"
     >
-      <script
-        is:inline
-        src="https://embed.ycb.me"
-        async="true"
-        data-domain="iter-ly-oslob-tour"
-        data-displaymode="auto"></script>
     </div>
   </div>
 </section>
+
+<script is:inline>
+  (function () {
+    var container = document.getElementById('ycbm-container');
+    if (!container) return;
+    var loaded = false;
+    var observer = new IntersectionObserver(
+      function (entries) {
+        if (entries[0].isIntersecting && !loaded) {
+          loaded = true;
+          var s = document.createElement('script');
+          s.src = 'https://embed.ycb.me';
+          s.async = true;
+          s.setAttribute('data-domain', container.getAttribute('data-domain'));
+          s.setAttribute('data-displaymode', 'auto');
+          container.appendChild(s);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: '200px' },
+    );
+    observer.observe(container);
+  })();
+</script>
