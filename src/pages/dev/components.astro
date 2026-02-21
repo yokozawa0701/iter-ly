@@ -162,10 +162,11 @@ import FooterCta from '../../components/sections/FooterCta.astro';
         />
         <PriceTable
           title="ジンベイザメツアー"
+          headers={['人数', '合計金額', '1人あたり']}
           rows={[
-            { label: '1名', price: '¥20,000' },
-            { label: '2名', price: '¥17,000 / 人' },
-            { label: '3名以上', price: '¥14,000 / 人' },
+            { label: '6名', price: '¥65,880', subPrice: '¥10,980 / 人' },
+            { label: '5名', price: '¥59,900', subPrice: '¥11,980 / 人' },
+            { label: '4名', price: '¥54,000', subPrice: '¥13,500 / 人' },
           ]}
         />
       </div>
