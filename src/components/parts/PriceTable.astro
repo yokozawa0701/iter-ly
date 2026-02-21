@@ -3,6 +3,7 @@ interface PriceRow {
   label: string;
   price: string;
   subPrice?: string;
+  highlight?: boolean;
 }
 
 interface Props {
@@ -34,7 +35,7 @@ const hasSubPrice = rows.some((row) => row.subPrice);
   <div class="bg-cyan-600 px-6 py-4 text-center">
     <h3 class="text-xl font-bold text-white">{title}</h3>
   </div>
-  <div class="p-6">
+  <div class="px-8 py-6">
     <table class="w-full">
       {
         headers && (
@@ -57,13 +58,35 @@ const hasSubPrice = rows.some((row) => row.subPrice);
       <tbody>
         {
           rows.map((row) => (
-            <tr class="border-b border-gray-100 last:border-0">
-              <td class="py-3 text-gray-700">{row.label}</td>
-              <td class="py-3 text-right font-bold text-gray-900">
+            <tr
+              class:list={[
+                'border-b border-gray-100 last:border-0',
+                row.highlight && 'bg-cyan-50',
+              ]}
+            >
+              <td
+                class:list={[
+                  'px-3 py-3',
+                  row.highlight ? 'font-bold text-cyan-800' : 'text-gray-700',
+                ]}
+              >
+                {row.label}
+              </td>
+              <td
+                class:list={[
+                  'px-3 py-3 text-right font-bold',
+                  row.highlight ? 'text-lg text-cyan-800' : 'text-gray-900',
+                ]}
+              >
                 {row.price}
               </td>
               {hasSubPrice && (
-                <td class="py-3 text-right text-sm text-gray-500">
+                <td
+                  class:list={[
+                    'px-3 py-3 text-right text-sm',
+                    row.highlight ? 'font-bold text-cyan-700' : 'text-gray-500',
+                  ]}
+                >
                   {row.subPrice}
                 </td>
               )}

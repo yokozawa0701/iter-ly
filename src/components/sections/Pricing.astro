@@ -9,7 +9,7 @@ import Button from '../parts/Button.astro';
   <div class="mx-auto max-w-4xl px-4">
     <SectionHeading> 料金プラン </SectionHeading>
     <p class="-mt-8 mb-12 text-center text-lg text-gray-600">
-      旅行会社を通さないから実現できた価格。<br />
+      旅行会社を通さないから、貸切ツアーでこの価格はイテリーだけ！<br />
       人数が多いほど1人あたりの料金がお得に！
     </p>
 
@@ -18,7 +18,12 @@ import Button from '../parts/Button.astro';
         title="オスロブツアー"
         headers={['人数', '合計金額', '1人あたり']}
         rows={[
-          { label: '6名', price: '¥65,880', subPrice: '¥10,980 / 人' },
+          {
+            label: '6名',
+            price: '¥65,880',
+            subPrice: '¥10,980 / 人',
+            highlight: true,
+          },
           { label: '5名', price: '¥59,900', subPrice: '¥11,980 / 人' },
           { label: '4名', price: '¥54,000', subPrice: '¥13,500 / 人' },
           { label: '3名', price: '¥49,500', subPrice: '¥16,500 / 人' },
@@ -26,6 +31,7 @@ import Button from '../parts/Button.astro';
         ]}
         notes={[
           '※ システム管理費・ホテルピックアップ料金・クレジットカード利用料も全て込みです',
+          '※ ランチは現地でガイドとご相談いただくため別料金となります',
         ]}
       />
     </div>
