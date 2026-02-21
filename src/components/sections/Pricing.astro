@@ -9,20 +9,29 @@ import Button from '../parts/Button.astro';
   <div class="mx-auto max-w-4xl px-4">
     <SectionHeading> 料金プラン </SectionHeading>
     <p class="-mt-8 mb-12 text-center text-lg text-gray-600">
-      旅行会社を通さないから実現できた価格。<br />
-      最大6名で料金は一律なので6名での参加がお得！
+      旅行会社を通さないから、貸切ツアーでこの価格はイテリーだけ！<br />
+      人数が多いほど1人あたりの料金がお得に！
     </p>
 
-    <div class="mx-auto max-w-md">
+    <div class="mx-auto max-w-lg">
       <PriceTable
         title="オスロブツアー"
+        headers={['人数', '合計金額', '1人あたり']}
         rows={[
-          { label: '1〜6名（一律）', price: '¥65,880' },
-          { label: '6名の場合', price: '¥10,980 / 人' },
+          {
+            label: '6名',
+            price: '¥65,880',
+            subPrice: '¥10,980 / 人',
+            highlight: true,
+          },
+          { label: '5名', price: '¥59,900', subPrice: '¥11,980 / 人' },
+          { label: '4名', price: '¥54,000', subPrice: '¥13,500 / 人' },
+          { label: '3名', price: '¥49,500', subPrice: '¥16,500 / 人' },
+          { label: '2名', price: '¥44,000', subPrice: '¥22,000 / 人' },
         ]}
         notes={[
-          '※ 最大6名まで。人数に関わらず一律料金です',
           '※ システム管理費・ホテルピックアップ料金・クレジットカード利用料も全て込みです',
+          '※ ランチは現地でガイドとご相談いただくため別料金となります',
         ]}
       />
     </div>

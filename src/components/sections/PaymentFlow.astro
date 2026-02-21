@@ -1,0 +1,59 @@
+---
+import SectionHeading from '../parts/SectionHeading.astro';
+
+const steps = [
+  {
+    step: 1,
+    title: '参加人数を選択してください',
+    image: '/images/payment-step1.webp',
+  },
+  {
+    step: 2,
+    title: '予約ページから空いている日程・時間を選択してください',
+    image: '/images/payment-step2.webp',
+  },
+  {
+    step: 3,
+    title: '必要項目を入力してください',
+    image: '/images/payment-step3.webp',
+  },
+  {
+    step: 4,
+    title: 'カード情報を入力し、決済を完了してください',
+    image: '/images/payment-step4.webp',
+  },
+  {
+    step: 5,
+    title: '予約完了です',
+    image: '/images/payment-step5.webp',
+  },
+];
+---
+
+<section class="bg-gray-50 py-20">
+  <div class="mx-auto max-w-6xl px-4">
+    <SectionHeading>お支払い方法</SectionHeading>
+
+    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
+      {
+        steps.map(({ step, title, image }) => (
+          <div class="rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
+            <img
+              src={image}
+              alt={`ステップ${step}: ${title}`}
+              class="w-full rounded-lg"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="mt-4 flex items-start gap-3">
+              <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-cyan-600 text-sm font-bold text-white">
+                {step}
+              </span>
+              <h3 class="text-sm font-bold text-gray-900">{title}</h3>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
