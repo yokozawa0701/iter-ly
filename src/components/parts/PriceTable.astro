@@ -2,17 +2,27 @@
 interface PriceRow {
   label: string;
   price: string;
+  subPrice?: string;
 }
 
 interface Props {
   title: string;
+  headers?: string[];
   rows: PriceRow[];
   note?: string;
   notes?: string[];
   class?: string;
 }
 
-const { title, rows, note, notes, class: className = '' } = Astro.props;
+const {
+  title,
+  headers,
+  rows,
+  note,
+  notes,
+  class: className = '',
+} = Astro.props;
+const hasSubPrice = rows.some((row) => row.subPrice);
 ---
 
 <div
@@ -26,6 +36,24 @@ const { title, rows, note, notes, class: className = '' } = Astro.props;
   </div>
   <div class="p-6">
     <table class="w-full">
+      {
+        headers && (
+          <thead>
+            <tr class="border-b border-gray-200">
+              {headers.map((header, i) => (
+                <th
+                  class:list={[
+                    'pb-2 text-sm font-medium text-gray-500',
+                    i === 0 ? 'text-left' : 'text-right',
+                  ]}
+                >
+                  {header}
+                </th>
+              ))}
+            </tr>
+          </thead>
+        )
+      }
       <tbody>
         {
           rows.map((row) => (
@@ -34,6 +62,11 @@ const { title, rows, note, notes, class: className = '' } = Astro.props;
               <td class="py-3 text-right font-bold text-gray-900">
                 {row.price}
               </td>
+              {hasSubPrice && (
+                <td class="py-3 text-right text-sm text-gray-500">
+                  {row.subPrice}
+                </td>
+              )}
             </tr>
           ))
         }
