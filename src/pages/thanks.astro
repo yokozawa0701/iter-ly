@@ -1,0 +1,85 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Button from '../components/parts/Button.astro';
+---
+
+<Layout title="ご予約ありがとうございます | イテリー">
+  <main
+    class="flex min-h-[70vh] items-center justify-center bg-gray-50 px-4 py-20"
+  >
+    <div class="mx-auto max-w-lg text-center">
+      <div
+        class="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-cyan-100"
+      >
+        <svg
+          class="h-10 w-10 text-cyan-600"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M5 13l4 4L19 7"></path>
+        </svg>
+      </div>
+
+      <h1 class="mb-4 text-2xl font-bold text-gray-900">
+        ご予約ありがとうございます
+      </h1>
+      <p class="mb-8 text-gray-600">
+        ご予約内容の確認メールをお送りしました。<br />
+        届かない場合は迷惑メールフォルダをご確認ください。
+      </p>
+
+      <div class="mb-8 rounded-xl bg-white p-6 text-left shadow-sm">
+        <h2 class="mb-4 font-bold text-gray-900">今後の流れ</h2>
+        <ol class="space-y-4 text-sm text-gray-600">
+          <li class="flex gap-3">
+            <span
+              class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-cyan-600 text-xs font-bold text-white"
+              >1</span
+            >
+            <div>
+              <span>ガイドからLINEが来るのをお待ちください</span>
+              <p class="mt-1 text-xs text-gray-400">
+                ※ もし連絡が来ない場合はイテリー公式LINEよりご連絡ください
+              </p>
+            </div>
+          </li>
+          <li class="flex gap-3">
+            <span
+              class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-cyan-600 text-xs font-bold text-white"
+              >2</span
+            >
+            <span>ガイドとLINEで当日のスケジュールを相談してください</span>
+          </li>
+          <li class="flex gap-3">
+            <span
+              class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-cyan-600 text-xs font-bold text-white"
+              >3</span
+            >
+            <span>ツアー当日、ホテルまでお迎えに上がります</span>
+          </li>
+        </ol>
+      </div>
+
+      <p class="mb-6 text-sm text-gray-500">
+        ご不明な点がございましたら、お気軽にLINEでお問い合わせください。
+      </p>
+
+      <div
+        class="flex flex-col items-center gap-3 sm:flex-row sm:justify-center"
+      >
+        <Button href="https://lin.ee/hsfaLhf" size="md">
+          LINEで問い合わせる
+        </Button>
+        <Button href="/" variant="secondary" size="md"
+          >トップページへ戻る</Button
+        >
+      </div>
+    </div>
+  </main>
+</Layout>
